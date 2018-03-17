@@ -1,7 +1,7 @@
 1.SortingGroup 的sortingLayerName，sortingOrder只影响带Renderer的组件，不影响UI（如UI2dSprite）的控件。
 2.有SortingGroup从最上层开始找，找到了开始比较。里边的没有作用了。
 3.层级比较，先比较摄像机的depth,然后是SortingGroup（没有比较Renderer的）或者Panel的sortingLayerName，sortingLayerName相同的才比较sortingOrder。
-4.UI的控件受到上一层的（从自己网上找）第一个Panel的影响，和SortingGroup查找顺序是反的。
+4.UI的控件受到上一层的（从自己向上找）第一个Panel的影响，和SortingGroup查找顺序是反的。
 5.UIPanel的Sort Order的0表示是自动的，会根据instanceId排序，不好控制，最好给一个大于等于1的值。
 6.Spine用的是MeshRenderer，Render放在UIRoot下大致1:100的缩放才能和原来大小差不多。
 7.SpriteRender与Spine的MeshRender均可以由Sorting Group控制。不受UIPanel影响。放在UI下，UI只影响缩放，大小。
